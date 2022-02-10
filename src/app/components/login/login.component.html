@@ -1,7 +1,7 @@
-<!-- <mat-spinner diameter="45" class="spinner"></mat-spinner> -->
 <div class="body mt-15">
   <div class="login">
-    <form [formGroup]="form" (ngSubmit)="ingresar()">
+    <mat-spinner *ngIf="loading" diameter="55" text-align=center class="Spinner"></mat-spinner>
+    <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
       <img src="../../../assets/img/2922688.png" width="50%" />
       <h1>Login</h1>
       <mat-form-field class="tag" appearance="fill">
