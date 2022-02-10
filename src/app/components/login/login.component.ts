@@ -25,7 +25,15 @@ export class LoginComponent implements OnInit {
     if(user=="adri" && password=="123") {
       // Redirección
     } else {
-      // Mostramos un mensaje de error
+      this.error()
     }
+  }
+  
+  error() {
+    this._snackBar.open('Usuario o contraseña ingresado son invalidos', '', {
+      duration: 3000,
+      horizontalPosition: 'center' ,
+      verticalPosition: 'bottom'
+    }) 
   }
 }
