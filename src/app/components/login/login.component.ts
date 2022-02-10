@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
-
+  form: FormGroup;
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) { 
+    this.form=fb.group({
+      usuario: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  }
   ngOnInit(): void {
   }
 
+  ingresar() {
+    const user = this.form.value.usuario;
+    const password = this.form.value.password;
+    
+    if(user=="adri" && password=="123") {
+      // Redirección
+    } else {
+      // Mostramos un mensaje de error
+    }
+  }
 }
