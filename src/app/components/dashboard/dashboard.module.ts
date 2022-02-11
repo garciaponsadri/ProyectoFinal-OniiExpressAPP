@@ -5,6 +5,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ListProductosComponent } from './list-productos/list-productos.component';
 
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { SharedModulesModule } from '../../components/shared-modules/shared-modules.module'
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { ListProductosComponent } from './list-productos/list-productos.componen
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MatTableModule,
+    MatGridListModule,
+    SharedModulesModule
   ]
 })
 export class DashboardModule { }

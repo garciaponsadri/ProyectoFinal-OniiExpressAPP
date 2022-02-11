@@ -4,7 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { ListProductosComponent } from './list-productos/list-productos.component';
 
 const routes: Routes = [
-  {path: '', component: ListProductosComponent}
+  {path: '', component: DashboardComponent},
+  {path: '/listar', component: ListProductosComponent}
 ];
 
 @NgModule({

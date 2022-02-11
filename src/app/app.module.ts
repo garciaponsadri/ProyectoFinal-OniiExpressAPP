@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModulesModule } from './components/shared-modules/shared-modules.module';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SharedModulesModule } from './components/shared-modules/shared-modules.
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    SharedModulesModule
+    SharedModulesModule,
+    MatFormFieldModule
   ],
   providers: [  ],
   bootstrap: [AppComponent]

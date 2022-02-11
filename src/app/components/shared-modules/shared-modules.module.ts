@@ -6,8 +6,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -18,7 +18,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatGridListModule,
+    MatFormFieldModule 
   ], exports: [
     CommonModule,
     MatSliderModule,
@@ -26,7 +29,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule 
+    MatProgressSpinnerModule ,
+    MatTableModule,
+    MatGridListModule,
+    MatFormFieldModule 
+    
   ]
 })
 export class SharedModulesModule { }
