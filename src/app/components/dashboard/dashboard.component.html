@@ -1,10 +1,2 @@
-<mat-grid-list cols="10" rowHeight="40px">
-    <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-      <app-list-productos></app-list-productos>
-    </mat-grid-tile>
-  </mat-grid-list>
+<app-navbar> </app-navbar>
+<router-outlet></router-outlet>

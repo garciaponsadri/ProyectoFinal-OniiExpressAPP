@@ -8,6 +8,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [],
@@ -21,7 +24,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatProgressSpinnerModule,
     MatTableModule,
     MatGridListModule,
-    MatFormFieldModule 
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatIconModule,
   ], exports: [
     CommonModule,
     MatSliderModule,
@@ -32,7 +37,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatProgressSpinnerModule ,
     MatTableModule,
     MatGridListModule,
-    MatFormFieldModule 
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatIconModule,
     
   ]
 })
