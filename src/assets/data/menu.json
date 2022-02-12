@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Categorias",
+        "redirect": "/dashboard/categorias"
+    },
+    {
+        "nombre": "Productos",
+        "redirect": "/dashboard"
+    },
+    {
+        "nombre": "Comparación",
+        "redirect": "/dashboard/comparar"
+    }
+]

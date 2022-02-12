@@ -10,7 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -27,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
+    HttpClientModule,
   ], exports: [
     CommonModule,
     MatSliderModule,
@@ -40,7 +41,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatToolbarModule,
     MatIconModule,
-    
+    HttpClientModule,
   ]
 })
 export class SharedModulesModule { }
