@@ -16,4 +16,8 @@ export class ProductoService {
   searchProductos(id: number): Observable<any> {
     return this.http.get(`${this.url}/search/${id}`);
   }
+
+  deleteProducto(id: number): Observable<any> {
+    return this.http.get(`${this.url}/delete:${id}`)
+  }
 }

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { SharedModulesModule } from '../../components/shared-modules/shared-modules.module'
 import { NavbarComponent  } from './navbar/navbar.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
-import {AdministrationComponent } from './administration.component'
+import {AdministrationComponent } from './administration.component';
+import { ProductosComponent } from './productos/productos.component'
 @NgModule({
   declarations: [
     NavbarComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,
