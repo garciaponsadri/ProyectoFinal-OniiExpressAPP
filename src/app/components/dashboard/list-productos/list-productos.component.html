@@ -14,14 +14,20 @@
           >
             <thead>
               <tr>
+                <th scope="col">Agregar</th>
                 <th scope="col">Producto</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Nota Media</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let producto of listProductos">
+                <td routerLink="producto/detail/{{producto._id}}"><span class="material-icons iconito">
+                  add
+                  </span></td>
                 <td>{{ producto._NombreProducto }}</td>
+                <td>{{ producto._CategoriaProducto }}</td>
                 <td>{{ producto._Precio }}</td>
                 <td>{{ producto._NotaMedia }}</td>
               </tr>

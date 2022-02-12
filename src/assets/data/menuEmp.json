@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "Productos",
+        "redirect": "/administration"
+    },
+    {
+        "nombre": "Clientes",
+        "redirect": "/administration"
+    },
+    {
+        "nombre": "Comparación",
+        "redirect": "/administration"
+    }
+]

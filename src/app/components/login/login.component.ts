@@ -26,13 +26,15 @@ export class LoginComponent implements OnInit {
     
     if(user=="adri" && password=="123") {
       // Redirección
-      this.fakeLoading()
+      this.fakeLoadingCLI()
+    } else if(user=="admin" && password=="123") {
+      this.fakeLoadingEMP()
     } else {
       this.error()
       this.form.reset()
     }
   }
-  
+
   error() {
     this._snackBar.open('Usuario o contraseña ingresado son invalidos', '', {
       duration: 3000,
@@ -41,7 +43,14 @@ export class LoginComponent implements OnInit {
     }) 
   }
 
-  fakeLoading() {
+  fakeLoadingEMP() {
+    this.loading=true;
+    setTimeout(() => {
+      this.router.navigate(['administration']);
+    }, 1500);
+  }
+
+  fakeLoadingCLI() {
     this.loading=true;
     setTimeout(() => {
       this.router.navigate(['dashboard']);

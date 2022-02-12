@@ -6,10 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductoService {
-  url='https://oniiexpressapi.herokuapp.com/Productos/get'
+  url='https://oniiexpressapi.herokuapp.com/Productos'
   constructor(private http: HttpClient) { }
 
   getProductos(): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(`${this.url}/get`);
+  }
+
+  searchProductos(id: number): Observable<any> {
+    return this.http.get(`${this.url}/search/${id}`);
   }
 }
