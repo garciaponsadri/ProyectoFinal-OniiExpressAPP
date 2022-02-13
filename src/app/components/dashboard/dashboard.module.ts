@@ -19,6 +19,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 */
 import { ChartModule } from 'angular-highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { AddPedidoComponent } from './add-pedido/add-pedido.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     CategoriasComponent,
     ComparizeComponent,
     ProductDetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddPedidoComponent
   ],
   imports: [
     CommonModule,

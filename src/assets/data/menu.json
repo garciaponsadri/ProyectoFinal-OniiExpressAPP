@@ -1,6 +1,6 @@
 [
     {
-        "nombre": "Categorias",
+        "nombre": "Precio de Productos",
         "redirect": "/dashboard/categorias"
     },
     {
@@ -8,7 +8,7 @@
         "redirect": "/dashboard"
     },
     {
-        "nombre": "Comparación",
+        "nombre": "Nota de Productos",
         "redirect": "/dashboard/comparar"
     }
 ]

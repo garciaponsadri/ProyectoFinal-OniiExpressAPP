@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import {ProductoService } from '../../../services/producto.service'
-import { Producto } from 'src/app/models/producto';
+import { Producto } from 'src/app/models/Productos/producto';
 
 @Component({
   selector: 'app-comparize',

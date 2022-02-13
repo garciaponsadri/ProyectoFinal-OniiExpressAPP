@@ -6,7 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import {MatTableDataSource} from '@angular/material/table';
 import {ProductoService } from '../../../services/producto.service'
-import { Producto } from 'src/app/models/producto';
+import { Producto } from 'src/app/models/Productos/producto';
 /**
  * @title Table with filtering
  */
@@ -24,7 +24,6 @@ export class ListarProductosComponent implements OnInit {
 
   displayedColumns = ['id', 'nombre', 'categoria', 'precio', 'nota', 'metodos'];
   dataSource!: MatTableDataSource<any>;
-  selection = new SelectionModel<Producto>(true, []);
 
   constructor(private _productoService: ProductoService,
     private _snackBar: MatSnackBar,
@@ -42,20 +41,6 @@ export class ListarProductosComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  checkboxLabel(row?: Producto): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    }
-    if(row._id != null) {
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row._id + 1}`;
-  }
-  return ""
-}
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
   }
   /*
 

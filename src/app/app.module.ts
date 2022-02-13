@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModulesModule } from './components/shared-modules/shared-modules.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HighchartsChartModule } from 'highcharts-angular';
-
 @NgModule({
   declarations: [
     AppComponent,

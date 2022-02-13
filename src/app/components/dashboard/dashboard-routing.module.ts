@@ -5,12 +5,14 @@ import { ListarProductosComponent } from './list-productos/list-productos.compon
 import { CategoriasComponent } from './categorias/categorias.component';
 import { ComparizeComponent } from './comparize/comparize.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AddPedidoComponent } from './add-pedido/add-pedido.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, children: [
     { path: '', component: ListarProductosComponent},
     { path: 'categorias', component: CategoriasComponent},
    { path: 'producto/detail/:id', component: ProductDetailComponent},
+   { path: 'add-pedido', component: AddPedidoComponent},
      { path: 'comparar', component: ComparizeComponent},
   ]},
 ];

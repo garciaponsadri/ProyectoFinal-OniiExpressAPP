@@ -3,7 +3,10 @@
       <div class="example-spacer"></div>
       <span class="example-spacer"></span>
 
-    <button mat-raised-button color="primary" (click)="addProducto()">Agregar</button>
+    <button mat-raised-button color="primary" (click)="addProducto()">Agregar Producto Generico</button>
+    <button mat-raised-button color="primary" (click)="addMovil()">Agregar Movil</button>
+    <button mat-raised-button color="primary" (click)="addProcesador()">Agregar Procesador</button>
+    <button mat-raised-button color="primary" (click)="addRopa()">Agregar Ropa</button>
     </mat-toolbar>
 
     <div class="container">
@@ -15,7 +18,7 @@
       <div class="mat-elevation-z6">
         <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>DNI</th>
+            <th mat-header-cell *matHeaderCellDef>ID</th>
             <td mat-cell *matCellDef="let Productos">{{ Productos._id }}</td>
           </ng-container>
 
@@ -31,11 +34,11 @@
   
           <ng-container matColumnDef="precio">
             <th mat-header-cell *matHeaderCellDef>Precio</th>
-            <td mat-cell *matCellDef="let Productos">{{ Productos._Precio }}</td>
+            <td mat-cell *matCellDef="let Productos">{{ Productos._PrecioBase }}</td>
           </ng-container>
   
           <ng-container matColumnDef="nota">
-            <th mat-header-cell *matHeaderCellDef>Teléfono</th>
+            <th mat-header-cell *matHeaderCellDef>Nota</th>
             <td mat-cell *matCellDef="let Productos">{{ Productos._NotaMedia }}</td>
           </ng-container>
   

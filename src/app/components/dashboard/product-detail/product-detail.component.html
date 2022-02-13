@@ -2,13 +2,14 @@
     <span class="titulos">Información sobre {{MiProducto._NombreProducto}}</span>
 </mat-toolbar>
 
-<p>Id de {{MiProducto._NombreProducto}}: {{MiProducto._id}}</p>
-<p>Categoría de {{MiProducto._NombreProducto}}: {{MiProducto._CategoriaProducto}}</p>
-<p>Precio de {{MiProducto._NombreProducto}}: {{MiProducto._Precio}}</p>
-<p>Nota Media de {{MiProducto._NombreProducto}}: {{MiProducto._NotaMedia}}</p>
-<br><br>
-{{MiProducto}}
+<div *ngFor="let item of MiProducto | keyvalue" style="background: #fcdbe6; color: #f15c8e; font-weight: bold; padding: 15px; border: 2px solid #fac9d9; border-radius: 6px;">
+  <p>{{item.key}}: {{item.value}}</p>
+</div>
 
-<button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
-    <mat-icon>plus_one</mat-icon>
-  </button>
+<div style="background: #fcdbe6; color: #f15c8e; font-weight: bold; padding: 15px; border: 2px solid #fac9d9; border-radius: 6px;">
+  <p>Precio Final: {{PrecioFinal}} €</p>
+</div>
+  <br><br>
+<!--  <div *ngIf="ProductoEmpt !== undefined" style="background: #fcdbe6; color: #f15c8e; font-weight: bold; padding: 15px; border: 2px solid #fac9d9; border-radius: 6px;">
+    <p>{{ProductoEmpt.todo()}}</p>
+  </div>-->

@@ -21,7 +21,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Producto } from 'src/app/models/producto';
+import { Producto } from 'src/app/models/Productos/producto';
 import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
@@ -68,6 +68,15 @@ export class ProductosComponent implements OnInit {
         error => console.log(error));
   }
 
+  addRopa() {
+    this._router.navigate(['/administration/add-ropa']);
+  }
+  addMovil() {
+    this._router.navigate(['/administration/add-movil']);
+  }
+  addProcesador() {
+    this._router.navigate(['/administration/add-procesador']);
+  }
   addProducto() {
     this._router.navigate(['/administration/add-productos']);
   } /*

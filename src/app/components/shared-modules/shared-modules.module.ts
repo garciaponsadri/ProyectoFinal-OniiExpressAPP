@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ChartModule } from 'angular-highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     MatCardModule,
     MatCheckboxModule,
-    ChartModule
+    ChartModule,
+    FormsModule,
+    ReactiveFormsModule
     
   ], exports: [
     CommonModule,
@@ -53,7 +56,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     MatCardModule,
     MatCheckboxModule,
-    ChartModule
+    ChartModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModulesModule { }

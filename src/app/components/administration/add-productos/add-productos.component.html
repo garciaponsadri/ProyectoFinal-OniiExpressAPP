@@ -1,1 +1,162 @@
-<p>add-productos works!</p>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="container col-4">
+        <h3 class="col-auto">
+          <font color="Purple">{{ titulo | uppercase }}</font>
+        </h3>
+        <form class="mt-3" [formGroup]="productForm" (ngSubmit)="crearProducto()">
+          <div class="mb-3">
+            <input
+              type="text"
+              formControlName="dni"
+              class="form-control form-control-lg"
+              placeholder="DNI del cliente"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('dni')?.hasError('required') &&
+              productForm.get('dni')?.touched
+              "
+            >
+              <span>El DNI es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control form-control-lg"
+              placeholder="Nombre completo"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('nombre')?.hasError('required') &&
+                productForm.get('nombre')?.touched
+              "
+            >
+              <span>El nombre es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              formControlName="telefono"
+              class="form-control form-control-lg"
+              placeholder="Teléfono"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('telefono')?.hasError('required') &&
+              productForm.get('telefono')?.touched
+              "
+            >
+              <span>El telefono es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              formControlName="numero"
+              class="form-control form-control-lg"
+              placeholder="Numero de calle"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('numero')?.hasError('required') &&
+              productForm.get('numero')?.touched
+              "
+            >
+              <span>El numero es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              formControlName="calle"
+              class="form-control form-control-lg"
+              placeholder="Nombre de calle"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('calle')?.hasError('required') &&
+                productForm.get('calle')?.touched
+              "
+            >
+              <span>El calle es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="number"
+              formControlName="capital"
+              class="form-control form-control-lg"
+              placeholder="Capital"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('capital')?.hasError('required') &&
+              productForm.get('capital')?.touched
+              "
+            >
+              <span>El capital es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="number"
+              formControlName="ingresos"
+              class="form-control form-control-lg"
+              placeholder="Ingresos anuales"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('ingresos')?.hasError('required') &&
+              productForm.get('ingresos')?.touched
+              "
+            >
+              <span>El ingresos es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="string"
+              formControlName="comercial"
+              class="form-control form-control-lg"
+              placeholder="DNI del comercial"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              productForm.get('comercial')?.hasError('required') &&
+              productForm.get('comercial')?.touched
+              "
+            >
+              <span>El comercial es <strong>obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+  <!--          <button
+              class="btn btn-secondary btn-lg float-start"
+              routerLink="/clientes/personales"
+            >
+              <i class="fas fa-sign-out"></i>
+            </button>-->
+            <button
+              type="submit"
+              [disabled]="productForm.invalid"
+              class="btn btn-success btn-lg float-end"
+            >
+              <i class="fas fa-upload"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

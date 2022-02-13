@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddProductosComponent } from './add-productos/add-productos.component';
+import { AddProductComponent } from './productsCreation/add-product/add-product.component';
 import { AdministrationComponent } from './administration.component';
 import { ProductosComponent } from './productos/productos.component';
+import { AddMovilComponent } from './productsCreation/add-movil/add-movil.component';
+import { AddProcesadorComponent } from './productsCreation/add-procesador/add-procesador.component';
+import { AddRopaComponent } from './productsCreation/add-ropa/add-ropa.component';
 
 const routes: Routes = [
   {path: '', component: AdministrationComponent, children: [
     { path: '', component: ProductosComponent},
     { path: 'productos', component: ProductosComponent},
-    { path: 'add-productos', component: AddProductosComponent},
+    { path: 'add-productos', component: AddProductComponent},
+    { path: 'add-movil', component: AddMovilComponent},
+    { path: 'add-procesador', component: AddProcesadorComponent},
+    { path: 'add-ropa', component: AddRopaComponent},
   ]},
 ];
 
