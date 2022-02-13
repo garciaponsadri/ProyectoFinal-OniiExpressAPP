@@ -10,8 +10,8 @@ const routes: Routes = [
   {path: '', component: DashboardComponent, children: [
     { path: '', component: ListarProductosComponent},
     { path: 'categorias', component: CategoriasComponent},
-    { path: 'producto/detail/:id', component: ProductDetailComponent},
-    { path: 'comparar', component: ComparizeComponent},
+   { path: 'producto/detail/:id', component: ProductDetailComponent},
+     { path: 'comparar', component: ComparizeComponent},
   ]},
 ];
 

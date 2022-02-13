@@ -14,10 +14,16 @@ export class ProductDetailComponent implements OnInit {
   MiProducto: Producto = {
     _id: 0,
     _NombreProducto: "",
-    _Almacenamiento: [],
     _CategoriaProducto: "",
     _NotaMedia: 0,
-    _Precio: 0
+    _Precio: 0,
+    _Almacenamiento: [],
+    id: 0,
+    NombreProducto: '',
+    CategoriaProducto: '',
+    Precio: 0,
+    NotaMedia: 0,
+    Almacenamiento: []
   }
   constructor(private _productoService: ProductoService, private route: ActivatedRoute, private location: Location) { }
 

@@ -7,13 +7,12 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModulesModule } from './components/shared-modules/shared-modules.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ProductosComponent } from './administration/productos/productos.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductosComponent,
   ],
   imports: [
     BrowserModule,

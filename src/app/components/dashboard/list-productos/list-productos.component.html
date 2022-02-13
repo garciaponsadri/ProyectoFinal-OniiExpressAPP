@@ -2,6 +2,7 @@
   <span class="titulos">Listar Productos</span>
 </mat-toolbar>
 
+<!--
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
@@ -43,4 +44,66 @@
       </div>
     </div>
   </div>
+</div>-->
+
+<div class="container">
+<div *ngIf="listProductos.length > 0">
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input />
+  </mat-form-field>
+  <div class="mat-elevation-z6">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="select">
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let Productos">{{ Productos._id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+        <td mat-cell *matCellDef="let Productos">{{ Productos._NombreProducto }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let Productos">{{ Productos._CategoriaProducto }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let Productos">{{ Productos._Precio  }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nota">
+        <th mat-header-cell *matHeaderCellDef>Nota</th>
+        <td mat-cell *matCellDef="let Productos">{{ Productos._NotaMedia }}</td>
+      </ng-container>
+
+     <ng-container matColumnDef="metodos">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let Productos;" style="text-align: right">
+          a
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <!--<mat-paginator [length]="10" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator> -->
+  </div>
+</div>
+<br>
+<mat-card *ngIf="listProductos.length == 0" style="text-align: center;"><b>No hay productos</b></mat-card>
+<br>
+<mat-spinner *ngIf="loading" class="spinner" diameter="50" style="margin: 0 auto;"></mat-spinner>
 </div>

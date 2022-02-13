@@ -1,4 +1,5 @@
-/**import { Component, OnInit } from '@angular/core';
+/**
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-productos',
@@ -12,7 +13,7 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-} */
+}  */
 
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -34,7 +35,7 @@ export class ProductosComponent implements OnInit {
   loading = true;
   listProducts: Producto[] = [];
 
-  displayedColumns = ['id', 'nombre', 'calle', 'numero', 'telefono', 'email', 'ventas', 'horas','acciones'];
+  displayedColumns = ['id', 'nombre', 'categoria', 'precio', 'nota', 'metodos'];
   dataSource!: MatTableDataSource<any>;
 
 
@@ -54,30 +55,26 @@ export class ProductosComponent implements OnInit {
     })
   }
 
-  ngAfterViewInit() {
-    //this.dataSource.paginator = this.paginator;
-    //this.dataSource.sort = this.sort;
-  }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  /*deleteEmpleado(id: number) {
-    this._productoService.deleteEmpleado(id). subscribe(data => {
+  deleteProducto(id: number) {
+    this._productoService.deleteProducto(id). subscribe(data => {
         console.log(data);
         this.ngOnInit();
       },
         error => console.log(error));
   }
 
-  addEmpleado() {
-    this._router.navigate(['/dashboard/crear-empleado']);
-  }
+  addProducto() {
+    this._router.navigate(['/administration/add-productos']);
+  } /*
 
-  editEmpleado(id: number) {
-    this._router.navigate(['/dashboard/crear-empleado', id]);
+  editProducto(id: number) {
+    this._router.navigate(['/dashboard/crear-producto', id]);
     console.log(id);
   }*/
-}
+
+} 

@@ -12,6 +12,13 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { ComparizeComponent } from './comparize/comparize.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NavbarComponent } from './navbar/navbar.component'
+/*
+import { ChartModule } from 'angular-highcharts';
+import { Chart } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
+*/
+import { ChartModule } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,9 @@ import { NavbarComponent } from './navbar/navbar.component'
     DashboardRoutingModule,
     MatTableModule,
     MatGridListModule,
-    SharedModulesModule
+    SharedModulesModule,
+    ChartModule,
+    HighchartsChartModule,
   ]
 })
 export class DashboardModule { }

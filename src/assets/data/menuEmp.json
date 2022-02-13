@@ -1,7 +1,7 @@
 [
     {
         "nombre": "Productos",
-        "redirect": "/administration"
+        "redirect": "/administration/productos"
     },
     {
         "nombre": "Clientes",

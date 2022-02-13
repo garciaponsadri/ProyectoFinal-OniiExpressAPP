@@ -11,6 +11,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ChartModule } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 @NgModule({
   declarations: [],
@@ -28,6 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
+    MatCardModule,
+    MatCheckboxModule,
+    ChartModule
+    
   ], exports: [
     CommonModule,
     MatSliderModule,
@@ -42,6 +51,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
+    MatCardModule,
+    MatCheckboxModule,
+    ChartModule
   ]
 })
 export class SharedModulesModule { }
