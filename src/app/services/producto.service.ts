@@ -14,6 +14,10 @@ export class ProductoService {
     return this.http.get(`${this.url}/get`);
   }
 
+  getPrecios(): Observable<any> {
+    return this.http.get(`${this.url}/precios`);
+  }
+
   searchProductos(id: number): Observable<any> { 
     return this.http.get(`${this.url}/search/${id}`);
   }
@@ -27,6 +31,7 @@ export class ProductoService {
   }
 
   addProducto(producto: Producto) {
+    console.log(producto)
     return this.http.post(`${this.url}/add`, producto)
   }
 }

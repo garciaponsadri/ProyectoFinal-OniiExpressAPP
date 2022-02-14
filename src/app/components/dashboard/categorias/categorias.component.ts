@@ -47,74 +47,28 @@ export class CategoriasComponent implements OnInit {
 
   //SeriesOptionsType
   getMisDatos() {
-    this._productoService.getProductos().subscribe(
+    this._productoService.getPrecios().subscribe(
       (result: any) => {
         this.listProductos = result.map((product: any) => {
-          if (product._CategoriaProducto == 'Ropa') {
-            return new Ropa(
-              product._id,
-              product._NombreProducto,
-              product._CategoriaProducto,
-              product._Precio,
-              product._NotaMedia,
-              product._Almacenamiento,
-              product._Talla
-            );
-          } else if (product._CategoriaProducto == 'Movil') {
-            return new Movil(
-              product._id,
-              product._NombreProducto,
-              product._CategoriaProducto,
-              product._Precio,
-              product._NotaMedia,
-              product._Almacenamiento,
-              product._GBRam,
-              product._Megapixeles
-            );
-          } else if (product._CategoriaProducto == 'Procesador') {
-            return new procesador(
-              product._id,
-              product._NombreProducto,
-              product._CategoriaProducto,
-              product._Precio,
-              product._NotaMedia,
-              product._Almacenamiento,
-              product._GHz
-            );
-          } else {
-            return new Producto(
-              product._id,
-              product._NombreProducto,
-              product._CategoriaProducto,
-              product._Precio,
-              product._NotaMedia,
-              product._Almacenamiento
-            );
-          }
+          return new Producto(product._id, product._NombreProducto, product._CategoriaProducto, product._PrecioBase, product._NotaMedia, product._Almacenamiento);
         });
-        console.log(this.listProductos);
+        console.log(this.listProductos)
 
-        // Creamos los objetos y usamos un método para representar el valor devuelto
-        const dataSeries = this.listProductos.map(
-          (x: Producto) => x._NombreProducto
-        );
-        const dataCategorias = this.listProductos.map((x: Producto) =>
-          x.calculoPrecio()
-        );
-        if (
-          dataSeries != undefined &&
-          dataCategorias != undefined &&
-          this.chartOptions.series != undefined &&
-          this.chartOptions.xAxis != undefined
-        ) {
-          this.chartOptions.series[0]['data'] = dataCategorias;
-          this.chartOptions.xAxis['categories'] = dataSeries;
-          this.chartOptions.title['text'] = 'Nota Media';
-          this.chartOptions.series['name'] = 'Personas';
-          Highcharts.chart('miGrafico02', this.chartOptions);
+// Creamos los objetos y usamos un método para representar el valor devuelto
+        console.log(this.listProductos)
+        const dataSeries = this.listProductos.map((x: Producto) => x._NombreProducto);
+        const dataCategorias = this.listProductos.map((x: Producto) => x._PrecioBase);
+        if(dataSeries!=undefined && dataCategorias !=undefined && this.chartOptions.series!=undefined && this.chartOptions.xAxis!=undefined) {
+          this.chartOptions.series[0]["data"] = dataCategorias;
+          this.chartOptions.xAxis["categories"] = dataSeries;
+          console.log(this.chartOptions.series[0]["data"])
+          console.log(this.chartOptions.xAxis["categories"])
+        this.chartOptions.title["text"] = "Precio Media";
+        this.chartOptions.series["name"] = "Personas"
+        Highcharts.chart("miGrafico02", this.chartOptions);
         }
       },
-      (error) => console.log(error)
+      error => console.log(error)
     );
   }
 }

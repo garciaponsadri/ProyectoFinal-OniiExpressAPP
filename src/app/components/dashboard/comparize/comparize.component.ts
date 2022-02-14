@@ -51,7 +51,7 @@ export class ComparizeComponent implements OnInit {
     .subscribe(
       (result: any) => {
         this.listProductos = result.map((product: any) => {
-          return new Producto(product._id, product._NombreProducto, product._CategoriaProducto, product._Precio, product._NotaMedia, product._Almacenamiento);
+          return new Producto(product._id, product._NombreProducto, product._CategoriaProducto, product._PrecioBase, product._NotaMedia, product._Almacenamiento);
         });
         console.log(this.listProductos)
 
@@ -61,6 +61,8 @@ export class ComparizeComponent implements OnInit {
         if(dataSeries!=undefined && dataCategorias !=undefined && this.chartOptions.series!=undefined && this.chartOptions.xAxis!=undefined) {
         this.chartOptions.series[0]["data"] = dataCategorias;
         this.chartOptions.xAxis["categories"] = dataSeries;
+        console.log(this.chartOptions.series[0]["data"])
+        console.log(this.chartOptions.xAxis["categories"])
         this.chartOptions.title["text"] = "Nota Media";
         this.chartOptions.series["name"] = "Personas"
         Highcharts.chart("miGrafico01", this.chartOptions);
