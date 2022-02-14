@@ -1,1 +1,106 @@
-<p>add-procesador works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="container col-4">
+        <h3 class="col-auto">
+          <font color="Purple"><b>{{ titulo | uppercase }}</b></font>
+        </h3>
+        <form class="mt-3" [formGroup]="procesadorForm" (ngSubmit)="crearProcesador()">
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="id"
+              class="form-control form-control-lg"
+              placeholder="ID del procesador"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              procesadorForm.get('id')?.hasError('required') &&
+              procesadorForm.get('id')?.touched
+              "
+            >
+              <span>Introduzca el Id</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control form-control-lg"
+              placeholder="Nombre de procesador"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              procesadorForm.get('nombre')?.hasError('required') &&
+              procesadorForm.get('nombre')?.touched
+              "
+            >
+              <span>Inserte nombre de procesador</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="NotaMedia"
+              class="form-control form-control-lg"
+              placeholder="Nota media del procesador"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              procesadorForm.get('NotaMedia')?.hasError('required') &&
+              procesadorForm.get('NotaMedia')?.touched
+              "
+            >
+              <span>Inserte la nota media</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="precio"
+              class="form-control form-control-lg"
+              placeholder="Precio de procesador"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              procesadorForm.get('precio')?.hasError('required') &&
+              procesadorForm.get('precio')?.touched
+              "
+            >
+              <span>Inserte el precio</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="ghz"
+              class="form-control form-control-lg"
+              placeholder="GHz de procesador"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              procesadorForm.get('ghz')?.hasError('required') &&
+              procesadorForm.get('ghz')?.touched
+              "
+            >
+              <span>Inserte los GHz</span>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <button
+              type="submit"
+              [disabled]="procesadorForm.invalid"
+              class="btn btn-success btn-primary btn-lg"
+              (click)="crearProcesador()"
+            >Enviar
+              <i class="fas fa-upload"></i>
+            </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

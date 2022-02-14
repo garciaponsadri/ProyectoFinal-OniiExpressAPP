@@ -5,15 +5,20 @@ import { NavbarComponent  } from './navbar/navbar.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
 import {AdministrationComponent } from './administration.component';
 import { ProductosComponent } from './productos/productos.component';
-import { AddProductosComponent } from './add-productos/add-productos.component';
 import { AddProductComponent } from './productsCreation/add-product/add-product.component';
+import { AddMovilComponent } from './productsCreation/add-movil/add-movil.component';
+import { AddProcesadorComponent } from './productsCreation/add-procesador/add-procesador.component';
+import { AddRopaComponent } from './productsCreation/add-ropa/add-ropa.component';
+
 @NgModule({
   declarations: [
     NavbarComponent,
     AdministrationComponent,
     ProductosComponent,
-    AddProductosComponent,
-    AddProductComponent
+    AddProductComponent,
+    AddMovilComponent,
+    AddProcesadorComponent,
+    AddRopaComponent
   ],
   imports: [
     CommonModule,

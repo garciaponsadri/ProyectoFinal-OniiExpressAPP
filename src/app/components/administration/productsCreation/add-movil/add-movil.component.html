@@ -1,1 +1,123 @@
-<p>add-movil works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="container col-4">
+        <h3 class="col-auto">
+          <font color="Purple"><b>{{ titulo | uppercase }}</b></font>
+        </h3>
+        <form class="mt-3" [formGroup]="movilForm" (ngSubmit)="crearProducto()">
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="id"
+              class="form-control form-control-lg"
+              placeholder="ID del movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('id')?.hasError('required') &&
+              movilForm.get('id')?.touched
+              "
+            >
+              <span>Introduzca el Id</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="nombre"
+              class="form-control form-control-lg"
+              placeholder="Nombre de movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('nombre')?.hasError('required') &&
+              movilForm.get('nombre')?.touched
+              "
+            >
+              <span>Inserte nombre de movil</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="NotaMedia"
+              class="form-control form-control-lg"
+              placeholder="Nota media del movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('NotaMedia')?.hasError('required') &&
+              movilForm.get('NotaMedia')?.touched
+              "
+            >
+              <span>Inserte la nota media</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="precio"
+              class="form-control form-control-lg"
+              placeholder="Precio de movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('precio')?.hasError('required') &&
+              movilForm.get('precio')?.touched
+              "
+            >
+              <span>Inserte el precio</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="megapixeles"
+              class="form-control form-control-lg"
+              placeholder="Megapixeles de movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('megapixeles')?.hasError('megapixeles') &&
+              movilForm.get('megapixeles')?.touched
+              "
+            >
+              <span>Inserte los Megapixeles</span>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input
+              type="text"
+              formControlName="gbram"
+              class="form-control form-control-lg"
+              placeholder="GB de RAM del movil"
+            />
+            <div
+              class="text-danger"
+              *ngIf="
+              movilForm.get('gbram')?.hasError('required') &&
+              movilForm.get('gbram')?.touched
+              "
+            >
+              <span>Inserte los GB de RAM</span>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <button
+              type="submit"
+              [disabled]="movilForm.invalid"
+              class="btn btn-success btn-primary btn-lg"
+              (click)="crearProducto()"
+            >Enviar
+              <i class="fas fa-upload"></i>
+            </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

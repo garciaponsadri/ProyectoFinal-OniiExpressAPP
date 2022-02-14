@@ -29,14 +29,15 @@ export class AddProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.crearProducto()
+  //  this.crearProducto()
   }
 
   crearProducto() {
-    console.log("a")
+    if(this.productForm.get('id')?.value!==undefined && this.productForm.get('nombre')?.value !== undefined && this.productForm.get('precio')?.value !== undefined && this.productForm.get('NotaMedia')?.value !== undefined) {
       const Product = new Producto (this.productForm.get('id')?.value, this.productForm.get('nombre')?.value, "varios", this.productForm.get('precio')?.value, this.productForm.get('NotaMedia')?.value, [])
-      console.log(Product)
       this.productoService.addProducto(Product).subscribe()
       this.productForm.reset()
+    }
   }
 }
+
