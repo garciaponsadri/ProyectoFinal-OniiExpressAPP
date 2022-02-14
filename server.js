@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 app.use(express.static('.dist/oniiexpress/'));
 app.get('/*', function(req, res) {
- res.sendFile('index.html', {root: '.dist/oniiexpress/'}
+ res.sendFile('index.html', {root: 'dist/oniiexpress/'}
  );
 });
 const port = 3500;
