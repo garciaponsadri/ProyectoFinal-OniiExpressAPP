@@ -35,7 +35,7 @@ export class AddProcesadorComponent implements OnInit {
 
   crearProcesador() {
     if(this.procesadorForm.get('id')?.value!==undefined && this.procesadorForm.get('nombre')?.value !== undefined && this.procesadorForm.get('precio')?.value !== undefined && this.procesadorForm.get('NotaMedia')?.value !== undefined && this.procesadorForm.get('ghz')?.value !== undefined) {
-      const miProcesador = new procesador (this.procesadorForm.get('id')?.value, this.procesadorForm.get('nombre')?.value, "varios", this.procesadorForm.get('precio')?.value, this.procesadorForm.get('NotaMedia')?.value, [], this.procesadorForm.get('ghz')?.value)
+      const miProcesador = new procesador (this.procesadorForm.get('id')?.value, this.procesadorForm.get('nombre')?.value, "Procesador", this.procesadorForm.get('precio')?.value, this.procesadorForm.get('NotaMedia')?.value, [], this.procesadorForm.get('ghz')?.value)
       this.productoService.addProcesador(miProcesador).subscribe()
       this.procesadorForm.reset()
     }

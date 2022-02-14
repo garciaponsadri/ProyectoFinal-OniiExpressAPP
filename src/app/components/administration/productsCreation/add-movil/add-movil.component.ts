@@ -37,7 +37,7 @@ export class AddMovilComponent implements OnInit {
 
   crearProducto() {
     if(this.movilForm.get('id')?.value!==undefined && this.movilForm.get('nombre')?.value !== undefined && this.movilForm.get('precio')?.value !== undefined && this.movilForm.get('NotaMedia')?.value !== undefined  && this.movilForm.get('megapixeles')?.value !== undefined && this.movilForm.get('gbram')?.value !== undefined) {
-      const Product = new Movil (this.movilForm.get('id')?.value, this.movilForm.get('nombre')?.value, "Ropa", this.movilForm.get('precio')?.value, this.movilForm.get('NotaMedia')?.value, [], this.movilForm.get('megapixeles')?.value, this.movilForm.get('gbram')?.value)
+      const Product = new Movil (this.movilForm.get('id')?.value, this.movilForm.get('nombre')?.value, "Movil", this.movilForm.get('precio')?.value, this.movilForm.get('NotaMedia')?.value, [], this.movilForm.get('megapixeles')?.value, this.movilForm.get('gbram')?.value)
       this.productoService.addMovil(Product).subscribe()
       this.movilForm.reset()
     }

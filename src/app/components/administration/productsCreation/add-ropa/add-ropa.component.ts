@@ -35,7 +35,7 @@ export class AddRopaComponent implements OnInit {
 
   crearRopa() {
     if(this.ropaForm.get('id')?.value!==undefined && this.ropaForm.get('nombre')?.value !== undefined && this.ropaForm.get('precio')?.value !== undefined && this.ropaForm.get('NotaMedia')?.value !== undefined) {
-      const Product = new Ropa (this.ropaForm.get('id')?.value, this.ropaForm.get('nombre')?.value, "ropa", this.ropaForm.get('precio')?.value, this.ropaForm.get('NotaMedia')?.value, [], this.ropaForm.get('talla')?.value)
+      const Product = new Ropa (this.ropaForm.get('id')?.value, this.ropaForm.get('nombre')?.value, "Ropa", this.ropaForm.get('precio')?.value, this.ropaForm.get('NotaMedia')?.value, [], this.ropaForm.get('talla')?.value)
       this.productoService.addRopa(Product).subscribe()
       this.ropaForm.reset()
     }
